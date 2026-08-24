@@ -24,7 +24,7 @@ jobs:
           cmd_options: '-a'
 
       - name: ZAP API Scan
-        uses: zaproxy/action-api-scan@v0.4.0
+        uses: zaproxy/action-api-scan@v0.10.0
         with:
           target: 'http://localhost:3000'
           format: openapi
