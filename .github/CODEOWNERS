@@ -1,0 +1,26 @@
+# Code Owners for ProjectForge
+# These owners will be automatically requested for review
+# when a pull request modifies matching files.
+
+# Default owners for everything
+* @your-username
+
+# Security-related files
+SECURITY.md @your-username
+.github/workflows/security.yml @your-username
+.github/workflows/security-policy.yml @your-username
+.pre-commit-config.yaml @your-username
+.secrets.baseline @your-username
+
+# Configuration files
+package.json @your-username
+tsconfig.json @your-username
+.eslintrc.json @your-username
+.prettierrc.json @your-username
+
+# Documentation
+README.md @your-username
+CONTRIBUTING.md @your-username
+SECURITY.md @your-username
+CHANGELOG.md @your-username
+LICENSE @your-username

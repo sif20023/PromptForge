@@ -1,0 +1,14 @@
+# Test coverage
+coverage/
+.nyc_output/
+
+# Test outputs
+*.test.js
+*.spec.js
+
+# Test snapshots
+__snapshots__/
+
+# Test fixtures
+fixtures/
+test-data/

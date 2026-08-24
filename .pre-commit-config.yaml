@@ -1,0 +1,82 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: detect-private-key
+      - id: detect-aws-credentials
+      - id: detect-gcp-credentials
+      - id: detect-azure-credentials
+      - id: no-commit-to-branch
+        args: ['--branch', 'main']
+
+  - repo: https://github.com/secretlint/secretlint
+    rev: v7.0.0
+    hooks:
+      - id: secretlint
+
+  - repo: https://github.com/numiapp/numi-pre-commit
+    rev: main
+    hooks:
+      - id: numi-secrets
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.0
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/securego/gosec
+    rev: master
+    hooks:
+      - id: gosec
+        args: ['-exclude=G104']
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: ['-c', 'pyproject.toml']
+        additional_dependencies: ['bandit[toml]']
+
+  - repo: https://github.com/returntocorp/semgrep
+    rev: v1.50.0
+    hooks:
+      - id: semgrep
+        args: ['--config', 'auto']
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v8.50.0
+    hooks:
+      - id: eslint
+        files: \.(js|ts|jsx|tsx)$
+        types: [file]
+        additional_dependencies:
+          - eslint@8.50.0
+          - eslint-plugin-security@1.7.1
+          - @typescript-eslint/eslint-plugin@6.7.4
+          - @typescript-eslint/parser@6.7.4
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.0.3
+    hooks:
+      - id: prettier
+        types_or: [javascript, jsx, ts, tsx, css, json, yaml, markdown]
+
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.9.0
+    hooks:
+      - id: commitizen

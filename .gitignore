@@ -1,0 +1,142 @@
+# Environment variables and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+.env.bak
+.env.old
+
+# API Keys and tokens
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+secrets.json
+secrets.yml
+secrets.yaml
+credentials.json
+credentials.yml
+service-account*.json
+
+# Private keys and certificates
+*.private
+*.secret
+*.password
+*.passwd
+id_rsa*
+id_ed25519*
+*.pub
+
+# Specific sensitive files mentioned
+.amv
+.amv.f
+*.amv
+*.amv.f
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+
+# Configuration files that may contain secrets
+config.json
+config.yml
+config.yaml
+*.config.js
+*.config.ts
+
+# Package managers
+node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state.gz
+
+# Build outputs
+dist/
+build/
+out/
+*.egg-info/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Rust
+target/
+
+# Go
+vendor/
+
+# Java
+*.class
+*.jar
+*.war
+
+# .NET
+*.pdb
+*.user
+*.suo
+
+# Docker
+docker-compose.override.yml
+
+# Cloudflare Wrangler
+.wrangler/
+.dev.vars
+
+# AWS
+.aws/
+credentials
+
+# GCP
+.gcloud/
+service-account*.json
+
+# Azure
+*.azureauth
+azure*
+
+# Any other secrets patterns
+*secret*
+*token*
+*password*
+*apikey*
+*api_key*
+*access_key*

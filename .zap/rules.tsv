@@ -1,0 +1,107 @@
+# OWASP ZAP Rules Configuration
+# Format: Rule ID	Strength	Threshold	Action
+# Strength: 0=OFF, 1=LOW, 2=MEDIUM, 3=HIGH
+# Threshold: 0=OFF, 1=LOW, 2=MEDIUM, 3=HIGH
+# Action: IGNORE, WARN, FAIL
+
+# SQL Injection
+10021	WARN	WARN	IGNORE
+
+# Cross-Site Scripting (XSS)
+40012	WARN	WARN	IGNORE
+
+# Cross-Domain Misconfiguration
+10023	WARN	WARN	IGNORE
+
+# Server Side Code Injection
+90018	WARN	WARN	IGNORE
+
+# Remote OS Command Injection
+90019	WARN	WARN	IGNORE
+
+# Path Traversal
+6	WARN	WARN	IGNORE
+
+# Remote File Inclusion
+7	WARN	WARN	IGNORE
+
+# Security Misconfiguration
+10015	WARN	WARN	IGNORE
+
+# Cookie without SameSite attribute
+10054	WARN	WARN	IGNORE
+
+# Cookie without Secure flag
+10011	WARN	WARN	IGNORE
+
+# Password Autocomplete detected
+10055	WARN	WARN	IGNORE
+
+# X-Frame-Options missing
+10020	WARN	WARN	IGNORE
+
+# X-Content-Type-Options missing
+10017	WARN	WARN	IGNORE
+
+# Content Security Policy missing
+10038	WARN	WARN	IGNORE
+
+# HTTP Strict Transport Security missing
+10039	WARN	WARN	IGNORE
+
+# Server Leaks Version information
+10010	WARN	WARN	IGNORE
+
+# Server Leaks via X-Powered-By header
+10012	WARN	WARN	IGNORE
+
+# Incomplete or no Cache-control header
+10013	WARN	WARN	IGNORE
+
+# Incomplete or no Pragma header
+10014	WARN	WARN	IGNORE
+
+# Application Error Disclosed
+10027	WARN	WARN	IGNORE
+
+# WSDL File Detected
+10040	WARN	WARN	IGNORE
+
+# Information Disclosure - Debug messages
+10028	WARN	WARN	IGNORE
+
+# Information Disclosure - Sensitive information in URL
+10029	WARN	WARN	IGNORE
+
+# Information Disclosure - Sensitive information in HTTP Referrer header
+10030	WARN	WARN	IGNORE
+
+# Information Disclosure - Sensitive information in HTTP Accept-Language header
+10031	WARN	WARN	IGNORE
+
+# Directory Browsing
+10032	WARN	WARN	IGNORE
+
+# Enterprise Application Security
+10044	WARN	WARN	IGNORE
+
+# weak authentication method
+10045	WARN	WARN	IGNORE
+
+# Insecure HTTP method
+10037	WARN	WARN	IGNORE
+
+# Multiple XSS flaws in libraries
+10048	WARN	WARN	IGNORE
+
+# Modern Web Application
+10049	WARN	WARN	IGNORE
+
+# Geolocation information disclosure
+10050	WARN	WARN	IGNORE
+
+# Sub-Resource Integrity (SRI) missing
+10051	WARN	WARN	IGNORE
+
+# Information Disclosure - Leaked tokens
+10052	WARN	WARN	IGNORE

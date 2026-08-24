@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "projectforge"
+version = "0.1.0"
+description = "A secure project repository with comprehensive protection against secret leaks"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "projectforge"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+bandit = {version = "^1.7.5", extras = ["toml"]}
+pre-commit = "^3.3.3"
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B101"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_ignores = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "A", "C4", "T20", "S"]
+ignore = ["B008"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["projectforge"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-ra -q --strict-markers"

@@ -1,0 +1,89 @@
+name: Security Headers Check
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    - cron: '0 12 * * 1'  # Weekly on Monday at 12:00 UTC
+
+jobs:
+  security-headers:
+    name: Security Headers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for security headers
+        run: |
+          echo "Checking security headers..."
+          
+          # Check for common security headers in source files
+          if grep -r "X-Content-Type-Options" .; then
+            echo "✅ X-Content-Type-Options header found"
+          else
+            echo "⚠️  X-Content-Type-Options header not found"
+          fi
+          
+          if grep -r "X-Frame-Options" .; then
+            echo "✅ X-Frame-Options header found"
+          else
+            echo "⚠️  X-Frame-Options header not found"
+          fi
+          
+          if grep -r "X-XSS-Protection" .; then
+            echo "✅ X-XSS-Protection header found"
+          else
+            echo "⚠️  X-XSS-Protection header not found"
+          fi
+          
+          if grep -r "Strict-Transport-Security" .; then
+            echo "✅ HSTS header found"
+          else
+            echo "⚠️  HSTS header not found"
+          fi
+          
+          if grep -r "Content-Security-Policy" .; then
+            echo "✅ CSP header found"
+          else
+            echo "⚠️  CSP header not found"
+          fi
+
+  cors-check:
+    name: CORS Configuration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check CORS configuration
+        run: |
+          echo "Checking CORS configuration..."
+          
+          # Check for overly permissive CORS
+          if grep -r "Access-Control-Allow-Origin: \*" .; then
+            echo "⚠️  WARNING: Overly permissive CORS configuration found"
+            echo "Consider restricting CORS to specific origins"
+          else
+            echo "✅ CORS configuration looks secure"
+          fi
+
+  cookie-security:
+    name: Cookie Security
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check cookie security
+        run: |
+          echo "Checking cookie security..."
+          
+          # Check for secure cookie flags
+          if grep -r "httpOnly" . || grep -r "secure" . || grep -r "sameSite" .; then
+            echo "✅ Secure cookie flags found"
+          else
+            echo "⚠️  No secure cookie flags found"
+          fi

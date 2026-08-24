@@ -1,0 +1,59 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Custom for JavaScript
+*.js text eol=lf
+*.ts text eol=lf
+*.jsx text eol=lf
+*.tsx text eol=lf
+
+# Custom for Python
+*.py text eol=lf
+
+# Custom for Go
+*.go text eol=lf
+
+# Custom for Rust
+*.rs text eol=lf
+
+# Custom for Shell scripts
+*.sh text eol=lf
+*.bash text eol=lf
+
+# Custom for YAML
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Custom for JSON
+*.json text eol=lf
+
+# Custom for Markdown
+*.md text eol=lf
+*.mdx text eol=lf
+
+# Binary files - prevent diffing
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+*.webp binary
+*.mp4 binary
+*.webm binary
+*.mp3 binary
+*.wav binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.rar binary
+*.7z binary
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+
+# AMV files - ensure they're treated as binary
+*.amv binary
+*.amv.f binary
