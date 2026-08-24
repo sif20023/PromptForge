@@ -31,7 +31,7 @@ jobs:
           cmd_options: '-a'
 
       - name: ZAP Full Scan
-        uses: zaproxy/action-full-scan@v0.5.0
+        uses: zaproxy/action-full-scan@v0.13.0
         if: github.event_name == 'schedule'
         with:
           target: 'http://localhost:3000'
