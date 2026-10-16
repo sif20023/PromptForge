@@ -42,7 +42,7 @@
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
     "secretlint": "^7.0.0",
-    "typescript": "^5.2.2"
+    "typescript": "^7.0.2"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,js,jsx}": [
